@@ -140,13 +140,12 @@ iframe {
 .limiter {
   width: 100%;
   margin: 0 auto;
+  margin-top: 0%;
 }
 
 .container-table100 {
   width: 100%;
-  min-height: 100vh;
-  background: #c4d3f6;
-
+  background: #549965;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -158,10 +157,18 @@ iframe {
   padding: 33px 30px;
 }
 
+.odds-title {
+  text-align: center;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #549965;
+}
+
 .page-title {
   width: 100%;
-  background: #c4d3f6;
-  padding: 33px 30px;
+  background: #549965;
+  padding: 20px 5%;
+  color: #333;
 }
 
 .wrap-table100 {
@@ -190,8 +197,7 @@ iframe {
 
 .row.header {
   color: #ffffff;
-  background: #6c7ae0;
-  border-radius: 15px;
+  background: #696969;
 }
 
 @media screen and (max-width: 768px) {
@@ -215,7 +221,6 @@ iframe {
     line-height: 1.2;
     text-transform: uppercase;
     font-weight: unset !important;
-
     margin-bottom: 13px;
     content: attr(data-title);
     min-width: 98px;
@@ -237,9 +242,9 @@ iframe {
   font-family: Poppins-Regular;
   font-size: 15px;
   color: #666666;
-  line-height: 1.2;
+  line-height: 1.0;
   font-weight: unset !important;
-
+  width: 90px;
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #f2f2f2;
@@ -247,7 +252,7 @@ iframe {
 
 .row.header .cell {
   font-family: Poppins-Regular;
-  font-size: 18px;
+  font-size: 20px;
   color: #fff;
   line-height: 1.2;
   font-weight: unset !important;
@@ -257,22 +262,8 @@ iframe {
 }
 
 .row .cell:nth-child(1) {
-  width: 360px;
-  padding-left: 40px;
+  padding-left: 30px;
 }
-
-.row .cell:nth-child(2) {
-  width: 160px;
-}
-
-.row .cell:nth-child(3) {
-  width: 250px;
-}
-
-.row .cell:nth-child(4) {
-  width: 190px;
-}
-
 
 .table, .row {
   width: 100% !important;
@@ -281,6 +272,10 @@ iframe {
 .row:hover {
   background-color: #ececff;
   cursor: pointer;
+}
+
+.row.header:hover {
+  background: #696969;
 }
 
 @media (max-width: 768px) {

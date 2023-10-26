@@ -89,6 +89,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.odds-title {
+  margin-left: 10px;
+}
+
 div {
   max-width: 70%;
   margin-left: 15%;
