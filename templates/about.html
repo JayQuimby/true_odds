@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1>True Odds</h1>
+{% endblock %}
+
+{% block body %}
+<div class="About">
+    <h2>
+        How it works:
+    </h2>
+    <h3>
+        This Neural network is trained off of the last 10 years of historical statistics data.
+        It is currently only predicting the outcomed of NCAAF games but more to come soon.
+        This is a straightforward ANN that has 7 layers and around 15M params. 
+        The training and validation accuracy for the model is changing because I keep training the model on new data.
+        The model in general trains to 75% evaluation accuracy and is doing binary classification.
+        The numbers that are displayed on the site as "probabilites" are the softmax outputs from the model.
+        The data is all web scraped and updated weekly. 
+    </h3>
+</div>
+{% endblock %}

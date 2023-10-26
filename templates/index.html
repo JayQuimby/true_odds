@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br><br>
+<div class="warning">
+    <h2>
+        About the prediction model:
+    </h2>
+    <h3>
+        This site displays predictions from a Artificial Neural Network that was trained on historical data.
+        <br><br>
+        The prediction accuracy durring development of the model is subject to change, but generally speaking 70% accurate.
+        <br><br>
+        Please do not use this to gamble your life savings away!!
+        <br><br>
+        One key rule: Model accuracy on any given week could be anywhere between 50-80% accurate.
+    </h3>
+    <a href="{{ url_for('predict_page') }}" class="button-link">Proceed to predictions</a>
+</div>
+{% endblock %}
