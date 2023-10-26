@@ -3,6 +3,8 @@ import pandas as pd
 from flask import redirect, render_template, url_for
 from true_odds.models import Game
 from sqlalchemy import and_, or_
+from datetime import datetime
+today_date = datetime.now().date()
 
 def load_data():
     csv_path = './true_odds/static/Database/all_season_preds.csv'
@@ -16,7 +18,7 @@ def index():
 
 @app.route('/pred')
 def predict_page():
-    data = Game.query.all()
+    data = Game.query.filter(Game.date >= today_date)
     return render_template('pred.html', table=data)
 
 @app.route('/team/<teamname>')
