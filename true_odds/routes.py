@@ -28,6 +28,7 @@ def index():
 @app.route('/pred')
 def predict_page():
     data = Game.query.filter(Game.date >= today_date)
+    print(data)
     return render_template('pred.html', table=data)
 
 @app.route('/team/<teamname>')
@@ -44,6 +45,14 @@ def date_page(date):
 def team_stats_page(teamname):
     team_db = Team.query.filter(Team.team_name == teamname)
     return render_template('team_bio.html', name=teamname, stats=team_db)
+
+@app.route('/duel/<team_a>_vs_<team_b>')
+def duel_page(team_a, team_b, pred_idx):
+    preds = Game.query.filter(Game.index == pred_idx)
+    a_stats = Team.query.filter(Team.team_name == team_a)
+    b_stats = Team.query.filter(Team.team_name == team_b)
+    return render_template('duel_page.html', t1=a_stats, t2=b_stats, prediction=preds)
+
 
 @app.route('/about')
 def about_page():
