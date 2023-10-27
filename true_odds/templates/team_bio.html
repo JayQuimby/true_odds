@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1>True Odds</h1>
+{% endblock %}
+
+{% block body %}
+<div class="page-title">
+    <h2>
+        Upcoming NCAAF predictions:
+    </h2>
+    <br>
+    <h3>
+        {% block subsearch %}{% endblock %}
+    </h3>
+</div>
+{% endblock %}
