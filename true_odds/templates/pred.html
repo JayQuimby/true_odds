@@ -20,28 +20,50 @@
     <div class="container-table100">
         <div class="wrap-table100">
             <div class="table">
-                <div class="row header">
-                    <div class="cell">Date</div>
-                    <div class="cell">Home</div>
-                    <div class="cell">Away</div>
-                    <div class="cell">Home Win Probability</div>
-                    <div class="cell">Away Win Probability</div>
-                    <div class="cell">Confidence</div>
-                    <div class="cell">Predicted Winner</div>
-                </div>
                 {% for row in table %}
-                <div class="row">
-                    <div class="cell"><a href="{{ url_for('date_page', date=row.date) }}">{{row.date}}</a></div>
-                    <div class="cell"><a href="{{ url_for('team_page', teamname=row.A) }}">{{row.A}}</a></div>
-                    <div class="cell"><a href="{{ url_for('team_page', teamname=row.B) }}">{{row.B}}</a></div>
-                    <div class="cell">{{ '{:.2%}'.format(row.A_win) }}</div>
-                    <div class="cell">{{ '{:.2%}'.format(row.B_win) }}</div>
-                    <div class="cell">{{ '{:.2%}'.format(row.ABS_diff) }}</div>
-                    <div class="cell"><a href="{{ url_for('team_page', teamname=row.prediction) }}">{{ row.prediction }}</a></div>
+                
+                <div class="card">
+                    <a href="{{ url_for('duel_page', **{'team_a':row.A, 'team_b':row.B, 'pred_idx':row.index}) }}">
+                        <div class="card-header">
+                            <b>
+                                {{ re.sub('-', ' ', row.A).title() }} VS. {{ re.sub('-', ' ', row.B).title() }}
+                            </b>
+                        </div>
+                    </a>
+                    <div class="card-content">
+                        <div class="cell-name">{{columns[1]}}:</div>
+                        <div class="cell"><a href="{{ url_for('date_page', date=row.date) }}">{{ row.date }}</a></div>
+                        <div class="cell-name">Teams:</div>
+                        <div class="cell">
+                            <a href="{{ url_for('team_page', teamname=row.A) }}">{{ re.sub('-', ' ', row.A).title() }}</a>:
+                            {% if row.A_win > 0.5 %}
+                                <b>   {{ '{:.2%}'.format(row.A_win) }}</b>
+                            {% else %}
+                                {{ '{:.2%}'.format(row.A_win) }}
+                            {% endif %}
+                        </div>
+                        <div class="cell">
+                            <a href="{{ url_for('team_page', teamname=row.B) }}">{{ re.sub('-', ' ', row.B).title() }}</a>:
+                            {% if row.B_win > 0.5 %}
+                                <b>   {{ '{:.2%}'.format(row.B_win) }}</b>
+                            {% else %}
+                                {{ '{:.2%}'.format(row.B_win) }}
+                            {% endif %}
+                        </div>
+                        <div class="cell-name">Prediction:</div>
+                        <div class="cell">
+                            <b>
+                                <a href="{{ url_for('team_page', teamname=row.prediction) }}">{{ re.sub('-', ' ', row.prediction).title() }}</a>:   {{ '{:.2%}'.format(row.ABS_diff) }}
+                            </b>
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
+            {% block extra %}{% endblock %}
         </div>
     </div>
 </div>
+
+
 {% endblock %}

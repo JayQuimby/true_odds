@@ -26,14 +26,17 @@
         -->
         <nav>
             <ul>
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('about_page') }}">About</a></li>
+                <li><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+                <li><a class="nav-link" href="{{ url_for('about_page') }}">About</a></li>
                 <!--
                     <a href="#">Contact</a>
                 -->
             </ul>
         </nav>
     </div>
-    {% block body %}{% endblock %}
+    <div class="page-container">
+        {% block body %}{% endblock %}
+    </div>
+    
 </body>
 </html>
