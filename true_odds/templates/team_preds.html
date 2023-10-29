@@ -2,13 +2,27 @@
 
 {% block subsearch %}
 
-Team: {{name}}
-
+Team: {{re.sub('-', ' ',name).title()}}
+<br><br>
+Upcoming Games:
 {% endblock %}
 
 {% block extra %}
-<div class="table">
-
+<h2, style="color: #333; font-size: 30px;">
+    {{ re.sub('-', ' ',name).title() }}'s current stats:
+</h2>
+<br>
+<div class="stat-table">
+    {% for key, value in stats[0].__dict__.items() if key[0] != '_' %}
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <b>
+                {{ key }}
+            </b>
+        </div>
+        <div class="stat-cell">{{ value }}</div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
 

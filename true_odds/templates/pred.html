@@ -21,7 +21,6 @@
         <div class="wrap-table100">
             <div class="table">
                 {% for row in table %}
-                
                 <div class="card">
                     <a href="{{ url_for('duel_page', **{'team_a':row.A, 'team_b':row.B, 'pred_idx':row.index}) }}">
                         <div class="card-header">
@@ -31,7 +30,7 @@
                         </div>
                     </a>
                     <div class="card-content">
-                        <div class="cell-name">{{columns[1]}}:</div>
+                        <div class="cell-name">Date:</div>
                         <div class="cell"><a href="{{ url_for('date_page', date=row.date) }}">{{ row.date }}</a></div>
                         <div class="cell-name">Teams:</div>
                         <div class="cell">

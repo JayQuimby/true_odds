@@ -5,6 +5,7 @@
   --background-grey: #333;
   --card-color: #bdbdbd;
   --shadow-box-clear: rgba(0, 0, 0, 0.3);
+  --stat-card-width: 100px
 }
 
 /* navigation bar */
@@ -172,7 +173,7 @@ iframe {
 
 .odds-title {
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: var(--site-green-color);
 }
@@ -245,6 +246,45 @@ iframe {
 .cell-name {
   font-size: 12px;
 }
+
+.stat-table {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(var(--stat-card-width), 10fr));
+  gap: 10px; /* Adjust the gap between cards */
+}
+
+
+.stat-card-header {
+  color:var(--site-green-color);
+  background-color: var(--background-grey);
+  font-size: 15px;
+}
+
+.stat-card {
+  border: 1px solid var(--card-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow-box-clear);
+  overflow: hidden;
+  margin: auto;
+  width: var(--stat-card-width);
+  background-color: white;
+}
+
+.stat-cell {
+  margin-bottom: 5px;
+  margin-left: 10px;
+  font-size: 15px;
+  color: var(--dark-grey);
+}
+
+
+.stat-cell-name {
+  font-size: 12px;
+  margin-left: 5px;
+  color: var(--dark-grey);
+}
+
 
 /* Add more styling as needed */
 

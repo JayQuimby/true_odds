@@ -17,7 +17,6 @@ paths = {
 def load_data():
     conn = sqlite3.connect('./instance/predict.db')
     for db_name, path in paths.items():
-        print(path)
         csv_path = f'./true_odds/static/Database/{path}.csv'
         data = pd.read_csv(csv_path)
         data.to_sql(name=db_name, con=conn, if_exists='replace', index=True)
@@ -29,7 +28,7 @@ def index():
 
 @app.route('/pred')
 def predict_page():
-    data = Game.query.filter(Game.date >= today_date)
+    data = Game.query.filter(Game.date >= today_date).order_by(Game.date)
     cols = data.first().__table__.columns.keys()
     return render_template('pred.html', table=data, columns=cols, **libraries)
 
@@ -37,8 +36,8 @@ def predict_page():
 def team_page(teamname):
     team_db = Game.query.filter(or_(Game.A == teamname, Game.B == teamname))
     stats_db = Team.query.filter(Team.team_name == teamname)
-    cols = stats_db.first().__table__.columns.keys()
-    return render_template('team_preds.html', name=teamname, table=team_db, columns=cols, stats=stats_db, **libraries)
+    stats_cols = stats_db.first().__table__.columns.keys()
+    return render_template('team_preds.html', name=teamname, table=team_db, columns=stats_cols, stats=stats_db, **libraries)
 
 @app.route('/day/<date>')
 def date_page(date):
