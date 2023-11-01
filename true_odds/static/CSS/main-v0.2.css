@@ -5,7 +5,8 @@
   --background-grey: #333;
   --card-color: #bdbdbd;
   --shadow-box-clear: rgba(0, 0, 0, 0.3);
-  --stat-card-width: 100px
+  --stat-card-width: 100px;
+  --corner-radius: 30px;
 }
 
 /* navigation bar */
@@ -32,6 +33,7 @@
   text-align: center;
   padding: 14px 16px; /* Set padding for the links */
   text-decoration: none;
+  font-size: 24px;
 }
 
 .navbar a:hover {
@@ -74,14 +76,11 @@ a.button-link:hover {
 }
 
 .warning {
-  background-color: black;
-  color: lightcoral; /* light red color */
-  border: 2px solid red; /* optional: red border around the box */
+  background-color: rgb(29, 29, 29);
+  color: rgb(250, 250, 250); /* light red color */
+  border: 2px solid rgb(255, 255, 255); 
+  border-radius: var(--corner-radius);
   padding: 20px; /* optional: add padding to the content */
-}
-
-.warning h2, .warning h3 {
-  color: lightcoral; /* override text color within the warning box */
 }
 
 /* ------------------------------------ */
@@ -153,6 +152,9 @@ iframe {
   width: 100%;
   margin: 0 auto;
   margin-top: 0%;
+  border: 1px solid var(--card-color);
+  border-bottom-left-radius: var(--corner-radius);
+  border-bottom-right-radius: var(--corner-radius);
 }
 
 .container-box {
@@ -166,22 +168,25 @@ iframe {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 33px 30px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  padding: 30px 30px;
+  border-bottom-right-radius: var(--corner-radius);
+  border-bottom-left-radius: var(--corner-radius);
   
 }
 
 .wrap-box {
   width: 95%;
   overflow: hidden;
+  margin-bottom: 4%;
 }
+
 
 .odds-title {
   text-align: center;
   font-size: 60px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: var(--site-green-color);
+  text-shadow: 2px 2px 5px #000;
 }
 
 .page-title {
@@ -189,13 +194,13 @@ iframe {
   background: var(--dark-grey);
   padding: 20px 5%;
   color: var(--card-color);
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
+  border-top-right-radius: var(--corner-radius);
+  border-top-left-radius: var(--corner-radius);
 }
 
 .title-subcontent {
   margin-left: 2%;
-  margin-top: 1%;
+
 }
 
 .content-title {
@@ -205,10 +210,8 @@ iframe {
 
 .big {
   font-size: 48px;
-  color: #ff0000;
+  color: #c54343;
 }
-
-
 
 .page-container {
   width: 70%;
@@ -238,7 +241,7 @@ iframe {
 
 .card {
   border: 1px solid var(--card-color);
-  border-radius: 12px;
+  border-radius: var(--corner-radius);
   box-shadow: 0 4px 8px var(--shadow-box-clear);
   overflow: hidden;
   width: var(--card-width); /* Adjust the width of each card as needed */
@@ -299,6 +302,52 @@ iframe {
 }
 
 
-/* Add more styling as needed */
+/* Duel page */
 
 
+.duel-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.duel-team {
+  width: 48%;
+  border-radius: var(--corner-radius);
+  background-color: var(--dark-grey);
+  padding: 15px;
+  box-shadow: 2px 2px 5px var(--shadow-box-clear);
+}
+.duel-line {
+  position: relative;
+  padding-bottom: 10px; /* Adjust as needed */
+  text-align: center; /* Center the content */
+}
+
+.duel-line-header a {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold; /* Bold title */
+  color: var(--card-color);
+  display: block;
+  text-align: center;
+  text-shadow: 2px 2px 5px #000; /* Add shadow for better visibility */
+}
+
+.duel-stat-name {
+  font-size: 22px;
+  font-weight: bold; /* Bold title */
+  color: var(--card-color);
+}
+
+.duel-stat-value {
+  font-size: 20px;
+  font-weight: bold; /* Bold title */
+  color: var(--dark-grey); /* Adjusted text color for better contrast with the green background */
+  background-color: var(--card-color); /* Use dark-grey for background */
+  padding: 5px 10px;
+  border-radius: var(--corner-radius);
+  box-shadow: 2px 2px 5px var(--shadow-box-clear);
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}

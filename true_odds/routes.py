@@ -50,7 +50,15 @@ def duel_page(team_a, team_b, pred_idx):
     preds = Game.query.filter(Game.index == pred_idx)
     a_stats = Team.query.filter(Team.team_name == team_a)
     b_stats = Team.query.filter(Team.team_name == team_b)
-    return render_template('duel_page.html', t1=a_stats, t2=b_stats, prediction=preds, **libraries)
+    vars = {
+        't1':a_stats,
+        't2':b_stats,
+        'prediction': preds,
+        'name_a': team_a,
+        'name_b': team_b,
+        'stat_track': ['total_yard', 'pass_completion_percent', 'avg_rush_yard']
+    }
+    return render_template('duel_page.html', **vars, **libraries)
 
 
 @app.route('/about')
