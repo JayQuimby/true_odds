@@ -1,5 +1,5 @@
 :root {
-  --site-green-color: #339234;
+  --site-green-color: #33ad4e;
   --card-width: 300px;
   --dark-grey: #1b1b1b;
   --background-grey: #333;
@@ -155,7 +155,7 @@ iframe {
   margin-top: 0%;
 }
 
-.container-table100 {
+.container-box {
   width: 100%;
   background: var(--site-green-color);
   display: -webkit-box;
@@ -169,6 +169,12 @@ iframe {
   padding: 33px 30px;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
+  
+}
+
+.wrap-box {
+  width: 95%;
+  overflow: hidden;
 }
 
 .odds-title {
@@ -180,11 +186,21 @@ iframe {
 
 .page-title {
   width: 100%;
-  background: var(--site-green-color);
+  background: var(--dark-grey);
   padding: 20px 5%;
-  color: var(--background-grey);
+  color: var(--card-color);
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
+}
+
+.title-subcontent {
+  margin-left: 2%;
+  margin-top: 1%;
+}
+
+.content-title {
+  color: white; 
+  font-size: 30px;
 }
 
 .big {
@@ -192,10 +208,7 @@ iframe {
   color: #ff0000;
 }
 
-.wrap-table100 {
-  width: 95%;
-  overflow: hidden;
-}
+
 
 .page-container {
   width: 70%;

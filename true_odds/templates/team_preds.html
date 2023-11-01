@@ -1,17 +1,18 @@
 {% extends 'pred.html' %}
 
 {% block subsearch %}
-
+<div class="title-subcontent">
 Team: {{re.sub('-', ' ',name).title()}}
-<br><br>
-Upcoming Games:
+</div>
+{% endblock %}
+
+{% block title %}
+<h2, class="title-subcontent content-title">
+    {{ re.sub('-', ' ',name).title() }}'s current stats:
+</h2>
 {% endblock %}
 
 {% block extra %}
-<h2, style="color: #333; font-size: 30px;">
-    {{ re.sub('-', ' ',name).title() }}'s current stats:
-</h2>
-<br>
 <div class="stat-table">
     {% for key, value in stats[0].__dict__.items() if key[0] != '_' %}
     <div class="stat-card">

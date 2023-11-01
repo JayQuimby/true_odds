@@ -34,8 +34,19 @@
         </nav>
     </div>
     <div class="page-container">
-        {% block body %}{% endblock %}
+        <div class="page-title">
+            <h2>
+                {% block title %}{% endblock %}
+            </h2>
+        </div>
+        
+        <div class="limiter">
+            <div class="container-box">
+                <div class="wrap-box">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
     </div>
-    
 </body>
 </html>
