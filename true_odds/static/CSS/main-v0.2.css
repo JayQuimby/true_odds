@@ -1,5 +1,5 @@
 :root {
-  --site-green-color: #33ad4e;
+  --site-green-color: #4aaa5f;
   --card-width: 300px;
   --dark-grey: #1b1b1b;
   --background-grey: #333;
@@ -177,7 +177,6 @@ iframe {
 .wrap-box {
   width: 95%;
   overflow: hidden;
-  margin-bottom: 4%;
 }
 
 
@@ -303,8 +302,6 @@ iframe {
 
 
 /* Duel page */
-
-
 .duel-box {
   display: flex;
   justify-content: space-between;
@@ -313,14 +310,23 @@ iframe {
 .duel-team {
   width: 48%;
   border-radius: var(--corner-radius);
-  background-color: var(--dark-grey);
+  background-color: var(--background-grey);
   padding: 15px;
   box-shadow: 2px 2px 5px var(--shadow-box-clear);
+  border: 1px solid var(--card-color);
+  
 }
+.duel-team-box {
+  display:flex;
+  justify-content: space-between;
+}
+
 .duel-line {
   position: relative;
   padding-bottom: 10px; /* Adjust as needed */
   text-align: center; /* Center the content */
+  flex: 1;
+  float: left;
 }
 
 .duel-line-header a {
@@ -331,6 +337,7 @@ iframe {
   display: block;
   text-align: center;
   text-shadow: 2px 2px 5px #000; /* Add shadow for better visibility */
+  width: 100%;
 }
 
 .duel-stat-name {
@@ -347,7 +354,42 @@ iframe {
   padding: 5px 10px;
   border-radius: var(--corner-radius);
   box-shadow: 2px 2px 5px var(--shadow-box-clear);
-  width: 30%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Duel card predictions */
+
+.duel-card {
+  width: 100%;
+  border: 1px solid var(--card-color);
+  border-radius: var(--corner-radius);
+  box-shadow: 0 4px 8px var(--shadow-box-clear);
+  overflow: hidden;
+  background-color: var(--background-grey);
+}
+
+.duel-card-content {
+  padding: 15px;
+  width: 100%;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.info-container {
+  margin: 4px;
+  flex: 1;
+  text-align: left;
+  float: left;
+}
+
+.duel-cell-name {
+  margin-right: 10px; /* Adjust margin as needed for spacing between cells */
+  font-size: 30px;
+}
+.duel-cell {
+  font-size: 28px;
+  margin-left: 3%;
 }
