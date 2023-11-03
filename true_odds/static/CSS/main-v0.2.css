@@ -317,16 +317,18 @@ iframe {
   
 }
 .duel-team-box {
-  display:flex;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .duel-line {
   position: relative;
-  padding-bottom: 10px; /* Adjust as needed */
+  padding-bottom: 20px; /* Adjust as needed */
   text-align: center; /* Center the content */
   flex: 1;
   float: left;
+  min-width: 150px;
 }
 
 .duel-line-header a {

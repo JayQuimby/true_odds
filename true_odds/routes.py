@@ -56,7 +56,8 @@ def duel_page(team_a, team_b, pred_idx):
         'prediction': preds,
         'name_a': team_a,
         'name_b': team_b,
-        'stat_track': ['total_yard', 'pass_completion_percent', 'avg_rush_yard']
+        'stat_track': ['Location', 'pass_yards', 'rush_yards', 'total_yard', 'SRS', 'de_pass_attempts', 'de_rush_attempt', 'de_num_plays',  'de_first_downs']
+
     }
     return render_template('duel_page.html', **vars, **libraries)
 

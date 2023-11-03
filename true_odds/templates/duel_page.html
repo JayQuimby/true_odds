@@ -23,10 +23,18 @@
             {% for stat in stat_track %}
             <div class="duel-line">
                 <div class="duel-stat-name">
-                    {{re.sub('_',' ',stat).title()}}:
+                    {% if not stat.startswith("de")  %}
+                        {{re.sub('_',' ',stat).title()}}:
+                    {% else %}
+                        {{re.sub('_', ' ', stat[3:] + " against").title()}}
+                    {% endif %}
                 </div>
                 <div class="duel-stat-value">
-                    {{t1[0][stat]}}
+                    {% if stat != 'Location' %}
+                        {{t1[0][stat]}}
+                    {% else %}
+                        {{prediction[0][stat]}}
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -43,10 +51,18 @@
             {% for stat in stat_track %}
             <div class="duel-line">
                 <div class="duel-stat-name">
-                    {{re.sub('_',' ',stat).title()}}:
+                    {% if not stat.startswith("de")  %}
+                        {{re.sub('_',' ',stat).title()}}:
+                    {% else %}
+                        {{re.sub('_', ' ', stat[3:] + " against").title()}}
+                    {% endif %}
                 </div>
                 <div class="duel-stat-value">
-                    {{t2[0][stat]}}
+                    {% if stat != 'Location' %}
+                        {{t2[0][stat]}}
+                    {% else %}
+                        {{prediction[0][stat]}}
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
