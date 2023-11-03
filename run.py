@@ -1,8 +1,8 @@
-from routes import load_data
-from utils import app, db
+from app.routes import load_data
+from app import app, db
 
 update_db = False
-testing = True
+testing = False
 if __name__ == '__main__':
     if update_db:
         with app.app_context():

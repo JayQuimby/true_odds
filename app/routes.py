@@ -1,8 +1,8 @@
-from utils import app, db
+from . import app, db
 import pandas as pd
 import sqlite3
 from flask import redirect, render_template, url_for
-from models import Game, Team 
+from app.models import Game, Team 
 from sqlalchemy import and_, or_
 from datetime import datetime
 import re
