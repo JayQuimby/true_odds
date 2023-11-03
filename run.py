@@ -1,8 +1,8 @@
-from true_odds.routes import load_data
-from true_odds import app, db
+from routes import load_data
+from utils import app, db
 
 update_db = False
-testing = False
+testing = True
 if __name__ == '__main__':
     if update_db:
         with app.app_context():

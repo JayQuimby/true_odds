@@ -1,4 +1,4 @@
-from . import db
+from utils import db
 
 class Game(db.Model):
     index = db.Column(db.Integer(), primary_key=True, autoincrement=True)

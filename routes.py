@@ -1,8 +1,8 @@
-from . import app, db
+from utils import app, db
 import pandas as pd
 import sqlite3
 from flask import redirect, render_template, url_for
-from true_odds.models import Game, Team 
+from models import Game, Team 
 from sqlalchemy import and_, or_
 from datetime import datetime
 import re
@@ -17,7 +17,7 @@ paths = {
 def load_data():
     conn = sqlite3.connect('./instance/predict.db')
     for db_name, path in paths.items():
-        csv_path = f'./true_odds/static/Database/{path}.csv'
+        csv_path = f'./static/Database/{path}.csv'
         data = pd.read_csv(csv_path)
         data.to_sql(name=db_name, con=conn, if_exists='replace', index=True)
 
