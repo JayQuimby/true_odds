@@ -1,2 +1,4 @@
 __pycache__
 env
+node_modules
+.firebaserc

@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F02WVXDDY9"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-F02WVXDDY9');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Bootstrap theme-->
@@ -20,16 +11,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/main-v0.2.css') }}">
     <div class="odds-title">True Odds</div>
     <div class="navbar">
-        <!--
-        <img class="logo" src="{{ url_for('static', filename='images/logo_s.png') }}" alt="True Odds">
-        -->
         <nav>
-            <ul>
-                <li><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
-                <li><a class="nav-link" href="{{ url_for('about_page') }}">About</a></li>
-                <!--
-                    <a href="#">Contact</a>
-                -->
+            <ul class="navbar-list">
+                <li class="navbar-icon" onclick="toggleMenu()">☰</li>
+                <div id="menu">
+                    <li><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+                    <li><a class="nav-link" href="{{ url_for('about_page') }}">About</a></li>
+                </div>
             </ul>
         </nav>
     </div>
@@ -48,5 +36,12 @@
             </div>
         </div>
     </div>
+
+<script>
+    function toggleMenu() {
+        var mobileMenu = document.getElementById("menu");
+        mobileMenu.style.display = (mobileMenu.style.display === "none") ? "block" : "none";
+    }
+</script>
 </body>
 </html>

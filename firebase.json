@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "true_odds",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "./__pycache__",
+      ".gitignore",
+      "env"
+    ]
+  }
+}

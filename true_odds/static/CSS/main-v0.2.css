@@ -18,7 +18,7 @@
 .navbar ul {
   list-style-type: none;
   margin: 0;
-  padding: -10;
+  padding: 0;
 }
 
 .navbar li {
@@ -39,6 +39,21 @@
 .navbar a:hover {
   background-color: var(--site-green-color); /* Change the background color on hover */
   color: black; /* Change the text color on hover */
+}
+
+.navbar-list {
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar-icon {
+  display: block;
+  color: white;
+  font-size: 50px;
+  text-align: right;
+  padding: 14px 16px;
+  cursor: pointer;
 }
 
 
@@ -213,7 +228,7 @@ iframe {
 }
 
 .page-container {
-  width: 70%;
+  width: 85%;
   margin: 0 auto; /* Center the container on the page */
   background-color: var(--background-grey); /* Dark grey color */
   padding: 20px; /* Adjust the padding as needed */
@@ -395,3 +410,50 @@ iframe {
   font-size: 28px;
   margin-left: 3%;
 }
+
+/* Media query for screens smaller than 768 pixels (adjust as needed) */
+@media only screen and (max-width: 500px) {
+  .navbar a {
+    display: block;
+  }
+
+  .navbar-list {
+    text-align: center;
+    display: inline-flex;
+  }
+
+  .navbar-icon {
+    display: block;
+    color: white;
+    font-size: 30px;
+    text-align: right;
+    padding: 14px 16px;
+    cursor: pointer;
+  }
+
+  #mobile-menu {
+    display: none;
+  }
+
+  /* Adjust the style for mobile menu links */
+  #mobile-menu li {
+    display: inline-flex;
+    text-align: center;
+  }
+
+  #mobile-menu a {
+    display: block;
+    padding: 14px 16px;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+  }
+
+  #mobile-menu a:hover {
+    background-color: var(--site-green-color);
+    color: black;
+  }
+}
+
+
+
